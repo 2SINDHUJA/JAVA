@@ -8,7 +8,7 @@ public class Main
             if(n%i==0){
                System.out.print(i+" ");
                fact(n/i);
-               return;
+               break;
             }
         }
     }
