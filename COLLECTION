@@ -1,0 +1,30 @@
+import java.util.*;
+public class Main
+{
+	public static ArrayList<Integer> list(int a) {
+		ArrayList<Integer> a1=new ArrayList<>();
+		while(a!=0) {
+			a1.add(a%10);
+			a=a/10;
+		}
+		return a1;
+	}
+	public static int cal(int a,int b,int c) {
+		ArrayList<Integer> a1=list(a);
+		ArrayList<Integer> b1=list(b);
+		ArrayList<Integer> c1=list(c);
+		return Collections.max(a1)+Collections.max(b1)+Collections.max(c1)+Collections.min(a1)+Collections.min(b1)+Collections.min(c1);
+	}
+	public static void main(String[] args)  {
+		Scanner SC = new Scanner(System.in);
+		System.out.print("Enter input1: ");
+		int a=SC.nextInt();
+		System.out.print("Enter input2: ");
+		int b=SC.nextInt();
+		System.out.print("Enter input3: ");
+		int c=SC.nextInt();
+		int result=cal(a,b,c);
+		System.out.println(result);
+	}
+
+}
