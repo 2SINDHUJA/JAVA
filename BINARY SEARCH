@@ -1,0 +1,48 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+class HelloWorld {
+    
+    // Binary search method with correct parameters and logic
+    public static boolean Binarysearch(int[] a, int low, int high, int target) {
+        while (low <= high) {
+            int mid = low + (high - low) / 2;  // To avoid overflow
+
+            if (a[mid] == target) {
+                return true;  // Target found
+            }
+            else if (a[mid] > target) {
+                high = mid - 1;  // Search in the left half
+            } else {
+                low = mid + 1;   // Search in the right half
+            }
+        }
+        return false;  // Target not found
+    }
+
+    public static void main(String[] args) {
+        // Input array (must be sorted for binary search)
+        int[] a = {100, 90, 40, 60, 20, 50, 70, 80};
+        
+        // Sort the array before performing binary search
+        Arrays.sort(a);
+        
+        // Take input from the user
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the element to find: ");
+        int target = sc.nextInt();
+
+        // Call binary search function
+        boolean result = Binarysearch(a, 0, a.length - 1, target);
+
+        // Output result
+        if (result) {
+            System.out.println("Element found!");
+        } else {
+            System.out.println("Element not found!");
+        }
+        
+        sc.close();  
+    }
+}
+_______________________________________________________________________________
