@@ -1,0 +1,58 @@
+class LList {
+    Node head;  
+    
+     class Node {
+        int data;
+        Node next;
+        Node(int val) {
+            data = val;
+            next = null;
+        }
+    }
+
+    public void insert(int val) 
+    {
+        Node newNode = new Node(val);  
+        if (head == null) 
+        {
+            head = newNode;
+        } 
+        else
+        {
+            Node temp = head;
+            while (temp.next != null)
+            {
+                temp = temp.next;
+            }
+            temp.next = newNode;
+        }
+    }
+
+    public void display()
+    {
+        if (head == null) 
+        {
+            System.out.println("The list is empty.");
+            return;
+        }
+
+        Node temp = head; 
+        while (temp != null)
+        {
+            System.out.print(temp.data + " ");
+            temp = temp.next;  
+        }
+        System.out.println();  
+    }
+
+    public static void main(String[] args) 
+    {
+        LList list = new LList();  
+        list.insert(100);
+        list.insert(200);
+        list.insert(300);
+        list.insert(400);
+
+        list.display();  
+    }
+}
