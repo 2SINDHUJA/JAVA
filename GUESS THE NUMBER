@@ -1,0 +1,92 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Integer> l1 = new ArrayList<>();
+        Random r = new Random();
+
+        
+        while (l1.size() < 5) {
+            int num = r.nextInt(10) + 1;
+            if (!l1.contains(num)) {
+                l1.add(num);
+            }
+        }
+
+        System.out.println("Random Numbers: " + l1);
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Enter the first player name: ");
+        String player1 = sc.nextLine();
+
+        System.out.println("Enter the second player name: ");
+        String player2 = sc.nextLine();
+
+        
+        List<Integer> g1 = new ArrayList<>(); 
+        List<Integer> g2 = new ArrayList<>(); 
+
+        
+        int s1 = 0; 
+        int s2 = 0; 
+
+        for (int i = 0; i < 3; i++) {
+            
+            System.out.println(player1 + ", enter your guess (1-10): ");
+            int guess1 = sc.nextInt();
+            while (g1.contains(guess1) || g2.contains(guess1)) {
+                System.out.println("That the  guess has already been made! Try again.");
+                guess1 = sc.nextInt();
+            }
+            g1.add(guess1); 
+
+            if (l1.contains(guess1)) 
+            {
+                System.out.println(player1 + " guessed correctly!");
+                s1++;  
+            }
+            else 
+            {
+            System.out.println(player1 + " guessed incorrectly");
+            }
+
+            System.out.println(player2 + ", enter your guess (1-10): ");
+            int guess2 = sc.nextInt();
+            while (g1.contains(guess2) || g2.contains(guess2))
+            {
+                System.out.println("That guess was done already! Please Try again.");
+                guess2 = sc.nextInt();
+            }
+            g2.add(guess2); 
+            
+            if (l1.contains(guess2)) 
+            {
+                System.out.println(player2 + " guessed correctly!");
+                s2++;  
+            } 
+            else 
+            {
+                System.out.println(player2 + " guessed incorrectly.");
+            }
+        }
+
+       
+        System.out.println("\nFinal Scores:");
+        
+        System.out.println(player1 + " score: " + s1);
+        System.out.println(player2 + " score: " + s2);
+
+ 
+        if (s1 > s2) {
+            System.out.println(player1 + " wins!");
+        } else if (s2 > s1) {
+            System.out.println(player2 + " wins!");
+        } else {
+            System.out.println("It's a tie!");
+        }
+
+        
+    }
+}
