@@ -1,0 +1,133 @@
+package TRAVEL;
+
+public class BUS {
+   
+	private int bno;
+	private boolean ac;
+	private int cap;
+	
+	BUS(int a,boolean b,int c)
+	{
+		this.bno=a;
+		this.ac=b;
+		this.cap=c;
+	}
+	public int get_busno()
+	{
+		return bno;
+	}
+	
+	public boolean get_ac()
+	{
+		return ac;
+	}
+	
+	public int get_capacity()
+	{
+		return cap;
+	}
+	public void display()
+	{
+		System.out.println("----------------------");
+		System.out.println("Bus No: "+bno);
+		System.out.println("ac?? "+ac);
+		System.out.println("Capacity: "+cap);
+	}
+}
+package TRAVEL;
+import java.util.*;
+import java.text.*;
+public class BOOKING {
+	
+	String name;
+	int busno;
+	Date date;
+	
+	BOOKING(Scanner sc)
+	{
+	System.out.println("Enter passenger Name: ");
+	name=sc.next();
+	System.out.println("Enter bus number: ");
+	busno=sc.nextInt();
+	System.out.println("Enter Date in the format of dd-mm-yyyy: ");
+	String n=sc.next();
+	SimpleDateFormat sdf=new SimpleDateFormat("DD-MM-YYYY");
+	
+	try {
+		date=sdf.parse(n);
+	}
+	catch(ParseException e)
+	{
+		e.printStackTrace();
+	}
+	
+	}
+	
+	public boolean isavailable(ArrayList<BUS> Buses, ArrayList<BOOKING> Bookings)
+	{
+		int booked=0;
+		int capacity=0;
+		for(BUS aa:Buses)
+		{
+		  if(aa.get_busno()==busno)
+		  {
+			  capacity=aa.get_capacity();
+		  }
+		for(BOOKING dd:Bookings)
+		{
+			if(dd.busno==busno && dd.date.equals(date))
+			{
+				booked++;
+				
+			}
+		}
+		
+		
+	  }
+		return booked<capacity;
+	}
+	
+	}	
+package TRAVEL;
+
+import java.util.*;
+
+public class Main {
+ public static void main(String[] args)
+ {
+	 ArrayList<BUS> Buses=new ArrayList<>();
+	 ArrayList<BOOKING> Bookings=new ArrayList<>();
+	 
+	 Buses.add(new BUS(1,true,30));
+	 Buses.add(new BUS(2,true,40));
+	 Buses.add(new BUS(3,true,3));
+	 
+	 for(BUS b:Buses)
+	 {
+		 b.display();
+	 }
+	 
+	 int ch=1;
+     Scanner sc=new Scanner(System.in);	 
+	 while(ch==1)
+	 {
+		 System.out.println("Enter 1 to book the seat,Enter 2 to exit,Enter 3 to display");
+		 ch=sc.nextInt();
+		 if(ch==1)
+		 {
+			 BOOKING book=new BOOKING(sc);
+			 if(book.isavailable(Buses,Bookings))
+			 {
+				 System.out.println("Confirmed your seat is booked");
+				 Bookings.add(book);
+			 }
+			 else
+			 {
+				 System.out.println("Sorry!! bus is full");
+			 }
+		 }
+	 }
+	 sc.close();
+ }
+}
+
