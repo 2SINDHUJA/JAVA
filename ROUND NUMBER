@@ -1,0 +1,43 @@
+import java.util.*;
+
+class Main {
+
+    public static boolean isRound(int n) {
+        Set<Integer> visited = new HashSet<>();
+        List<Integer> cycleNumbers = new ArrayList<>(); 
+        while (n != 1 && !visited.contains(n)) {
+            visited.add(n);
+            cycleNumbers.add(n);  
+            n = sumOfDigits(n);
+        }
+
+     
+        if (n == 1) {
+            System.out.println("Cycle ends at 1. Sequence leading to 1: " + cycleNumbers);
+            return true;  
+        } else {
+            System.out.println("Cycle detected. Numbers in the cycle: " + cycleNumbers);
+            return false;  
+        }
+    }
+
+    public static int sumOfDigits(int num) {
+        int sum = 0;
+        while (num > 0) {
+            int digit = num % 10;
+            sum += digit * digit;
+            num /= 10;
+        }
+        return sum;
+    }
+
+    public static void main(String[] args) {
+        int num = 64;
+        int num1 = 68;
+        int num2 = 23;
+
+        System.out.println(num + " is round: " + isRound(num));
+        System.out.println(num1 + " is round: " + isRound(num1));
+        System.out.println(num2 + " is round: " + isRound(num2));
+    }
+}
