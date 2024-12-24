@@ -1,0 +1,16 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+       System.out.print("Enter the table number:");
+       int a=sc.nextInt();
+      int i=1;
+       for(;;)
+       {
+           if(i>10) break;
+           System.out.println(i+"*"+a+"="+i*a);
+           i++;
+       
+       }
+    }
+}
