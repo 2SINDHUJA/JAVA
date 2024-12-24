@@ -1,0 +1,34 @@
+CONSTRAINS:
+___________
+Use do-while loop and without printing the 5 and 8
+
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    int n=1;
+	    do{
+	        if(n==5 || n==8)
+	        {
+	            n++;
+	            continue;
+	        }
+	        System.out.println(n);
+	        n++;
+	    }
+	    while(n<=10);
+	}
+}
+
+SOLUTION:
+_________
+1
+2
+3
+4
+6
+7
+9
+10
