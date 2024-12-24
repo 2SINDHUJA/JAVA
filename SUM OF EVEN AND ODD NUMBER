@@ -1,0 +1,30 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+    Scanner sc=new Scanner(System.in);
+       System.out.print("Enter the number:");
+       int a=sc.nextInt();
+       int oddsum=0;
+       int evensum=0;
+       while(a>0){
+        int rem=a%10;
+           if(rem%2==0)
+           {
+               evensum+=rem;
+           }
+           else{
+               oddsum+=rem;
+           }
+           a=a/10;
+       }
+       System.out.println("even number sum is:"+evensum);
+       System.out.println("odd number sum is:"+oddsum);
+    }
+}
+
+SOLUTION:
+_________
+Enter the number:286579
+even number sum is:16
+odd number sum is:21
+
