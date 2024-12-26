@@ -1,0 +1,29 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    Scanner sc=new Scanner(System.in);
+	    System.out.print("Enter the number of element:");
+	    int a=sc.nextInt();
+	    System.out.print("Enter the elements:");
+	    int[] arr=new int[a];
+	    int ucount=0;
+	    for(int i=0;i<a;i++){
+	        arr[i]=sc.nextInt();
+	    }
+	    System.out.print("The repeated elements are:");
+	    for(int i=0;i<a;i++)
+	    {
+	       for(int j=i+1;j<a;j++)
+	       {
+	           if(arr[i]==arr[j])
+	           {
+	               System.out.print(arr[i]);	           
+	               
+	           }
+	       }
+	    }
+	}
+	  
+}
