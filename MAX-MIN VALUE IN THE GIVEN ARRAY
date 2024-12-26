@@ -1,0 +1,43 @@
+import java.util.*;
+public class Main
+{
+    public static int minimumArrayValue(int arr[],int a)
+    {
+      int min=arr[0];
+      for(int i=0;i<a;i++)
+	    {
+	        if(arr[i]<min)
+	        {
+	            min=arr[i];
+	        }
+	    }
+	    return min;
+    }
+    public static int maximumArrayValue(int arr[],int a)
+    {
+      int max=arr[a-1];
+      for(int i=0;i<a;i++)
+	    {
+	        if(arr[i]>max)
+	        {
+	            max=arr[i];
+	        }
+	    }
+	    return max;
+    }
+	public static void main(String[] args) 
+	{
+	    Scanner sc=new Scanner(System.in);
+	    System.out.println("Enter the element:");
+	    int a=sc.nextInt();
+	    int[] arr=new int[a];
+	    for(int i=0;i<a;i++)
+	    {
+	        arr[i]=sc.nextInt();
+	    }
+	    
+	   
+	    System.out.println(maximumArrayValue(arr,a)-minimumArrayValue(arr,a));
+	    
+	}
+}
