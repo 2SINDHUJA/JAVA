@@ -1,0 +1,76 @@
+//Function without parameters and without return value
+
+import java.util.*;
+public class Main{
+    public static int addTwoNumbers(int a,int b){
+        return a+b;
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter a:");
+        int a=sc.nextInt();
+        System.out.print("enter b:");
+        int b=sc.nextInt();
+        System.out.print("Addition of 2 Number:");
+        int c=addTwoNumbers(a,b);
+        System.out.print(c);
+    }
+    
+}
+-----------------------------------------------------
+//Function with parameters and without return value
+
+import java.util.*;
+public class Main{
+    public static void addTwoNumbers(int a,int b){
+         System.out.println(a+b);
+    }
+    public static void main(String[] args){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter a:");
+        int a=sc.nextInt();
+        System.out.print("enter b:");
+        int b=sc.nextInt();
+        addTwoNumbers(a,b);
+    }
+}
+-----------------------------------------------------
+//Function without parameters and with return value
+
+import java.util.*;
+public class Main{
+    public static int addTwoNumbers(){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter a:");
+        int a=sc.nextInt();
+        System.out.print("enter b:");
+        int b=sc.nextInt();
+        return a+b;
+    }
+    public static void main(String[] args){
+        
+        int sum=addTwoNumbers();
+        System.out.print(sum);
+    }
+}
+-----------------------------------------------------
+//Function without parameters and without return value
+
+import java.util.*;
+public class Main{
+    public static void addTwoNumbers(){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("enter a:");
+        int a=sc.nextInt();
+        System.out.print("enter b:");
+        int b=sc.nextInt();
+        int sum=a+b;
+        System.out.print(sum);
+        
+    }
+    public static void main(String[] args){
+        addTwoNumbers();
+    }
+}
+
+-----------------------------------------------------
