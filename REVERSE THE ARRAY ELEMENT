@@ -1,0 +1,57 @@
+METHOD 1:
+---------
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    Scanner sc=new Scanner(System.in);
+	    System.out.println("Enter the element:");
+	    int a=sc.nextInt();
+	    int[] arr=new int[a];
+	    for(int i=0;i<a;i++){
+	        arr[i]=sc.nextInt();
+	    }
+	
+	        for(int j=a-1;j>=0;j--)
+	        {
+	            System.out.println(arr[j]);
+	        }
+	     
+
+	}
+	  
+}
+
+METHOD 2:
+---------
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+	    Scanner sc=new Scanner(System.in);
+	    System.out.print("Enter the element:");
+	    int a=sc.nextInt();
+	    System.out.println("Before Swaping the element.");
+	    int[] arr=new int[a];
+	    int i=0,j=a-1,temp=0;
+	    for(int k=0;k<a;k++){
+	        arr[k]=sc.nextInt();
+	    }
+	    while(i<j){
+	        temp=arr[i];
+	        arr[i]=arr[j];
+	        arr[j]=temp;
+	        i++;j--;
+	    }
+	   System.out.println("After Swaping the element.");
+       for(int k=0;k<a;k++){
+         
+          System.out.print(arr[k]+" ");
+      }
+	}
+	  
+}
