@@ -1,0 +1,30 @@
+TRANSPOSE MATRIX:
+------------------------------------
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner(System.in);
+	    System.out.print("Number of row and colums are:");
+	    int n=sc.nextInt();
+	    
+	    int[][] arr=new int[n][n];
+	    System.out.println("Input matrix is:");
+	    for(int i=0;i<n;i++){
+	        for(int j=0;j<n;j++)
+	        {
+	            arr[i][j]=sc.nextInt();	       
+	        }
+	    }
+	    System.out.println("Matrix after read the matrix displayed is:");
+	    for(int i=0;i<n;i++){
+	        for(int j=0;j<n;j++)
+	        {
+	            System.out.print(arr[j][i]+" ");	       
+	        }
+	        System.out.println();
+	    }
+	    	
+	}
+}
