@@ -1,0 +1,82 @@
+Write a Java program to create a class called "Book" with instance variables title, author, and price. Implement a default constructor and two parameterized constructors:
+
+One constructor takes title and author as parameters.
+The other constructor takes title, author, and price as parameters.
+Print the values of the variables for each constructor.
+
+SOLUTION:
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import java.util.*;
+class Book {
+    // Instance variables
+    private String title;
+    private String author;
+    private double price;
+
+    
+    public Book() {
+        title = "Unknown Title";
+        author = "Unknown Author";
+        price = 0.0;
+    }
+
+    // Parameterized constructor (title and author)
+    public Book(String title, String author) {
+        this.title = title;
+        this.author = author;
+        this.price = 0.0; // Default price
+    }
+
+    // Parameterized constructor (title, author, and price)
+    public Book(String title, String author, double price) {
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+
+    // Method to display book details
+    public void displayDetails() {
+        System.out.println("Title: " + title);
+        System.out.println("Author: " + author);
+        System.out.println("Price: $" + price);
+        System.out.println("------------------------");
+    }
+}
+
+// Main class
+public class Main{
+    public static void main(String[] args) {
+        // Using default constructor
+        Book book1 = new Book();
+        System.out.println("Book 1 Details:");
+        book1.displayDetails();
+
+        // Using constructor with title and author
+        Book book2 = new Book("The Alchemist", "Paulo Coelho");
+        System.out.println("Book 2 Details:");
+        book2.displayDetails();
+
+        // Using constructor with title, author, and price
+        Book book3 = new Book("Rich Dad Poor Dad", "Robert Kiyosaki", 9.99);
+        System.out.println("Book 3 Details:");
+        book3.displayDetails();
+    }
+}
+
+OUTPUT:
+------------------------
+Book 1 Details:
+Title: Unknown Title
+Author: Unknown Author
+Price: $0.0
+------------------------
+Book 2 Details:
+Title: The Alchemist
+Author: Paulo Coelho
+Price: $0.0
+------------------------
+Book 3 Details:
+Title: Rich Dad Poor Dad
+Author: Robert Kiyosaki
+Price: $9.99
+------------------------
