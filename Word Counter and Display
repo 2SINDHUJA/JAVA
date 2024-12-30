@@ -1,0 +1,20 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the String: ");
+		String str1=sc.nextLine();
+		
+		StringTokenizer st=new StringTokenizer(str1);
+	    int count=st.countTokens();
+		
+		System.out.println("The no.of words in the given string is: "+count);
+		int i=1;
+        while(st.hasMoreTokens())
+        {
+            System.out.println("Word"+i+":"+st.nextToken()+",Remaining words:"+st.countTokens());
+            i++;
+        }
+	}
+}
