@@ -1,0 +1,39 @@
+1. 
+import java.util.*;
+class c1{
+    public int x;
+}
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		c1 obj =new c1();
+		obj.x=10;
+		System.out.println(obj.x);
+	}
+}
+
+
+2.GETTER AND SETTER METHOD:
+----------------------------
+import java.util.*;
+class c1{
+   private int x;
+   public void setX(int m)
+   {
+       this.x=m;
+       
+   }
+   public int getX(){
+       return x;
+   }
+}
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		c1 obj =new c1();
+		obj.setX(10);
+		System.out.println(obj.getX());
+	}
+}
