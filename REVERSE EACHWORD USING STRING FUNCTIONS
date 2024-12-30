@@ -1,0 +1,18 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the String: ");
+		String str1=sc.nextLine();
+		StringTokenizer st=new StringTokenizer(str1);
+        while(st.hasMoreTokens())
+        {
+            String token=st.nextToken();
+            String reversedToken=new StringBuilder(token).reverse().toString();
+            System.out.print(reversedToken+" ");
+        }
+	}
+}
+
