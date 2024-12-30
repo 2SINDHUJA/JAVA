@@ -1,0 +1,15 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the String1: ");
+		String str1=sc.nextLine();
+		
+		StringTokenizer sb=new StringTokenizer(str1);
+	    int count=sb.countTokens();
+		
+		System.out.print("The no.of words in the given string is: "+count);
+
+	}
+}
