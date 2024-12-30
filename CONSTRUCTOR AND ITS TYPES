@@ -1,0 +1,76 @@
+//default constructor
+
+import java.util.*;
+class myclass{
+    public static void method1(){
+        System.out.println("in method 1");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        myclass mc=new myclass();
+        mc.method1();
+    }
+}
+
+//non-parametrized constructor
+
+class myclass{
+    public static void method1(){
+        System.out.println("in method 1");
+    }
+    myclass(){
+        System.out.println("in counstor");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        myclass mc=new myclass();
+        mc.method1();
+    }
+}
+//parametrized constructor
+
+import java.util.*;
+class myclass{
+    public static void method1(){
+        System.out.println("in method 1");
+    }
+    myclass(){
+        System.out.println("in counstor");
+    }
+    myclass(int n){
+        System.out.println("in parameterized"+n);
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        myclass mc=new myclass(6);
+        mc.method1();
+    }
+}
+
+//copy constructor
+
+import java.util.*;
+class myclass{
+    public static void method1(){
+        System.out.println("in method 1");
+    }
+    myclass(){
+        System.out.println("in counstor");
+    }
+    myclass(int n){
+        System.out.println("in parameterized"+n);
+    }
+    myclass(myclass m){
+        System.out.println("in copy ");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        myclass mc=new myclass(6);
+        myclass mc1=new myclass(mc);
+        mc.method1();
+    }
+}
