@@ -1,0 +1,16 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.print("Enter the String: ");
+		String str=sc.nextLine();
+		StringBuffer sb=new StringBuffer(str);
+		for(int i=1; i<sb.length(); i++)
+		{
+			sb.deleteCharAt(i);
+		}
+		System.out.println("Repeating Characters are: "+sb.toString());
+
+	}
+}
