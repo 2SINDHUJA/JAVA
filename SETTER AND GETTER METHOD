@@ -1,0 +1,25 @@
+import java.util.*;
+class cname 
+{
+	private int member;
+	//setter
+	public void setMember(int param) 
+	{
+		this.member=param;
+	}
+	//getter
+	public int getMember( ) 
+	{
+		return member;
+	}
+}
+public class Main 
+{
+	public static void main(String[] args) 
+	{
+		cname obj=new cname();
+		obj.setMember(10);
+		System.out.println(obj.getMember());
+
+	}
+}
