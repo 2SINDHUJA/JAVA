@@ -1,0 +1,32 @@
+import java.util.*;
+class addtwonumbers
+{
+	public  int add(int a,int b)
+	{
+
+		return a+b;
+
+	}
+	public float add2(float c,float d)
+	{
+		return c+d;
+
+	}
+}
+
+public class Main
+{
+
+	public static void main(String[] args)
+	{
+        Scanner sc=new Scanner(System.in);
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        float c=sc.nextFloat();
+        float d=sc.nextFloat();
+        
+		addtwonumbers atn=new addtwonumbers();
+		System.out.println("With integer add method: "+atn.add(a,b));
+		System.out.println("With float add method: "+atn.add2(c,d));
+	}
+}
