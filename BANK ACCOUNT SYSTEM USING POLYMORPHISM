@@ -1,0 +1,74 @@
+class BankAccount
+{
+	protected double balance;
+	public BankAccount(double initialBalance)
+	{
+		balance = initialBalance;
+	}
+
+
+	public void deposit(double amount)
+	{
+		balance += amount;
+		System.out.println("Deposited: $" + amount);
+	}
+
+
+	public void withdraw(double amount)
+	{
+		if (amount <= balance)
+		{
+			balance -= amount;
+			System.out.println("Withdrawn: $" + amount);
+		} else {
+			System.out.println("Insufficient balance!");
+		}
+	}
+
+
+	public void displayBalance()
+	{
+		System.out.println("Balance: $" + balance);
+	}
+}
+
+
+class SavingsAccount extends BankAccount
+{
+
+
+	public SavingsAccount(double initialBalance)
+	{
+		super(initialBalance);
+	}
+
+	//@Override
+	public void withdraw(double amount)
+	{
+		if (balance - amount < 100)
+		{
+			System.out.println("Withdrawal denied! Minimum balance of RS.100 required.");
+		} else {
+			super.withdraw(amount);
+		}
+	}
+}
+
+public class Main
+{
+	public static void main(String[] args)
+	{
+
+		BankAccount account = new BankAccount(500);
+		account.deposit(200);
+		account.withdraw(100);
+		account.displayBalance();
+
+
+		SavingsAccount savings = new SavingsAccount(300);
+		savings.withdraw(150);
+		savings.displayBalance();
+		savings.withdraw(200);
+		savings.displayBalance();
+	}
+}
