@@ -1,0 +1,137 @@
+Write a Java program to create a vehicle class hierarchy. The base class should be Vehicle, with subclasses Truck, Car and Motorcycle.Each subclass should have properties such as make, model, year, and fuel type. 
+Implement methods for calculating fuel efficiency, distance traveled, and maximum speed.
+
+SOLUTION:
+---------
+import java.util.*;
+class vehicle
+{
+	String make;
+	String model;
+	int year;
+	String fuel;
+	public vehicle(String make, String model, int year, String fuel)
+	{
+		this.make = make;
+		this.model = model;
+		this.year = year;
+		this.fuel = fuel;
+	}
+	public int calculateFuelEfficiency()
+	{
+		return 0;
+	}
+	public int calculateDistanceTraveled()
+	{
+		return 0;
+	}
+	public int calculateMaximumSpeed()
+	{
+		return 0;
+	}
+}
+class Truck extends vehicle
+{
+	public Truck(String make, String model,int year,String fuel)
+	{
+		super(make,model,year,fuel);
+	}
+	public int calculateFuelEfficiency()
+	{
+		return 12;
+	}
+	public int calculateDistanceTraveled()
+	{
+		return 10;
+	}
+	public int calculateMaximumSpeed()
+	{
+		return 17;
+	}
+
+
+}
+class Car extends vehicle
+{
+	public Car(String make, String model,int year,String fuel)
+	{
+		super(make,model,year,fuel);
+	}
+	public int calculateFuelEfficiency()
+	{
+		return 39;
+	}
+	public int calculateDistanceTraveled()
+	{
+		return 20;
+	}
+	public int calculateMaximumSpeed()
+	{
+		return 77;
+	}
+}
+class Motorcycle extends vehicle
+{
+	public Motorcycle(String make, String model,int year,String fuel)
+	{
+		super(make,model,year,fuel);
+	}
+	public int calculateFuelEfficiency()
+	{
+		return 52;
+	}
+	public int calculateDistanceTraveled()
+	{
+		return 32;
+	}
+	public int calculateMaximumSpeed()
+	{
+		return 47;
+	}
+}
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		Truck obj1 = new Truck("Volvo", "FH16", 2023, "Diesel");
+		Car obj2 = new Car("Toyota", "Corolla", 2022, "Petrol");
+		Motorcycle obj3 = new Motorcycle("Honda", "CBR500R", 2021, "Petrol");
+		
+		System.out.println("Truck: ");
+		System.out.println(obj1.calculateFuelEfficiency());
+
+		System.out.println(obj1.calculateDistanceTraveled());
+
+		System.out.println(obj1.calculateMaximumSpeed());
+		System.out.println("Car: ");
+		System.out.println(obj2.calculateFuelEfficiency());
+
+		System.out.println(obj2.calculateDistanceTraveled());
+
+		System.out.println(obj2.calculateMaximumSpeed());
+		System.out.println("Motorcycle: ");
+		System.out.println(obj3.calculateFuelEfficiency());
+
+		System.out.println(obj3.calculateDistanceTraveled());
+
+		System.out.println(obj3.calculateMaximumSpeed());
+
+	}
+}
+
+OUTPUT:
+-------
+
+Truck: 
+12
+10
+17
+Car: 
+39
+20
+77
+Motorcycle: 
+52
+32
+47
+
