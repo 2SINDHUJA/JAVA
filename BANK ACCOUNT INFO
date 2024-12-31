@@ -1,0 +1,27 @@
+class BankAccount
+{
+    private int accountNumber;
+    private int balance;
+    public void setMember(int a, int b)
+    {
+        this.accountNumber = a;
+        this.balance = b;
+    }
+    public int getAccountNumber()
+    {
+        return accountNumber;
+    }
+    public int getBalance()
+    {
+        return balance;
+    }
+    
+}
+class Main{
+    public static void main(String[] args)
+    {
+        BankAccount obj = new BankAccount();
+        obj.setMember(101, 100000);
+        System.out.println(obj.getAccountNumber()+" - "  +  obj.getBalance());
+    }
+}
