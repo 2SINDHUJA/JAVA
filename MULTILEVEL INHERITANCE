@@ -1,0 +1,38 @@
+import java.util.*;
+class one
+{
+	public int add2(int a,int b)
+	{
+       return a+b;
+	}
+}
+class two extends one
+{
+	public int add3(int a,int b,int c)
+	{
+        return a+b+c;
+	}
+}
+class three extends two
+{
+	public int add4(int a,int b,int c,int d)
+	{
+        return a+b+c+d;
+	}
+}
+public class Main
+{
+
+	public static void main(String[] args)
+	{
+      Scanner sc=new Scanner(System.in);
+     
+      one obj1=new one();
+      System.out.println(obj1.add2(2,4));
+      two obj2=new two();
+      System.out.println(obj2.add3(2,4,6));
+      three obj3=new three();
+      System.out.println(obj3.add4(2,4,6,8));
+      
+	}
+}
