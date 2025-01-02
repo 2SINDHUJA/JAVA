@@ -1,0 +1,58 @@
+Write a Java program to create an abstract class Shape with abstract methods calculateArea() and calculatePerimeter(). 
+Create subclasses Circle and Triangle that extend the Shape class and implement the respective methods to calculate the area and perimeter of each shape.
+SOLUTION:
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+abstract class Shape
+{
+    abstract double calculateArea();
+    abstract double calculatePerimeter();
+}
+class Circle extends Shape
+{
+    private double radius ;
+    public Circle(double radius)
+    
+    {
+        this.radius = radius;
+    }
+   public double calculateArea()
+   {
+       return (3.14*radius*radius);
+   }
+   public double  calculatePerimeter()
+   {
+       return (2*3.14*radius);
+   }
+}
+class Triangle extends Shape
+{
+    private double a; 
+    private double b;
+    private double c;
+    public  Triangle(double a, double b, double c)
+    {
+        this.a = a;
+        this.b = b;
+        this.c = c;
+    }
+    public double calculatePerimeter()
+    {
+        return c+a+b;
+    }
+    public double calculateArea(){
+        return (0.5*a*b);
+    }
+    
+}
+public class Main
+{
+    public static void main(String[] args)
+    {
+        Circle obj1 = new Circle(7);
+        System.out.println(obj1.calculateArea());
+        System.out.println(obj1.calculatePerimeter());
+        Triangle obj2 = new Triangle(10,9,2);
+        System.out.println(obj2.calculatePerimeter());
+        System.out.println(obj2.calculateArea());
+    }
+}
