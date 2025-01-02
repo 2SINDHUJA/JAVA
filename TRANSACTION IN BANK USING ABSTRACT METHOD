@@ -1,0 +1,137 @@
+[10:17 AM, 1/2/2025] +91 96527 93983: Write a Java program to create an abstract class BankAccount with abstract methods deposit() and withdraw(). Create subclasses: SavingsAccount and CurrentAccount that extend the BankAccount class and implement the respective methods to handle deposits and withdrawals for each account type.
+Constraints : - 1. Only 5 transactions in a month for Savings Account.
+2.	You can not deposit or withdraw more than 25,000 Rs for Savings Account
+3.	You need to take type of account, transaction type , amount, the number of transaction in this month.
+[10:21 AM, 1/2/2025] +91 96527 93983: 3.	You need to take type of account, transaction type , balance, amount, the number of transaction in this month.
+4.	 Minimum balance for savings account is 500
+
+SOLUTION:
+---------
+import java.util.Scanner;
+abstract class BankAccount {
+    protected String accountType;
+    protected double balance;
+
+    public BankAccount(String accountType, double balance) {
+        this.accountType = accountType;
+        this.balance = balance;
+    }
+
+    abstract void deposit(double amount, int transactionsThisMonth);
+
+    abstract void withdraw(double amount, int transactionsThisMonth);
+}
+class SavingsAccount extends BankAccount {
+    private static final int MAX_TRANSACTIONS = 5;
+    private static final double MAX_TRANSACTION_AMOUNT = 25000;
+    private static final double MIN_BALANCE = 500;
+
+    public SavingsAccount(double balance) {
+        super("Savings", balance);
+    }
+    //@Override
+    void deposit(double amount, int transactionsThisMonth) {
+        if (transactionsThisMonth >= MAX_TRANSACTIONS) {
+            System.out.println("Transaction failed: Maximum transactions reached for the month.");
+            return;
+        }
+        if (amount > MAX_TRANSACTION_AMOUNT) {
+            System.out.println("Transaction failed: Cannot deposit more than Rs. 25,000.");
+            return;
+        }
+        balance += amount;
+        System.out.println("Deposit successful. New balance: Rs. " + balance);
+    }
+    //@Override
+    void withdraw(double amount, int transactionsThisMonth) {
+        if (transactionsThisMonth >= MAX_TRANSACTIONS) {
+            System.out.println("Transaction failed: Maximum transactions reached for the month.");
+            return;
+        }
+        if (amount > MAX_TRANSACTION_AMOUNT) {
+            System.out.println("Transaction failed: Cannot withdraw more than Rs. 25,000.");
+            return;
+        }
+        if (balance - amount < MIN_BALANCE) {
+            System.out.println("Transaction failed: Insufficient balance. Minimum balance of Rs. 500 must be maintained.");
+            return;
+        }
+        balance -= amount;
+        System.out.println("Withdrawal successful. New balance: Rs. " + balance);
+    }
+}
+class CurrentAccount extends BankAccount {
+    public CurrentAccount(double balance) {
+        super("Current", balance);
+    }
+
+    //@Override
+    void deposit(double amount, int transactionsThisMonth) {
+        balance += amount;
+        System.out.println("Deposit successful. New balance: Rs. " + balance);
+    }
+    //@Override
+    void withdraw(double amount, int transactionsThisMonth) {
+        if (balance < amount) {
+            System.out.println("Transaction failed: Insufficient balance.");
+            return;
+        }
+        balance -= amount;
+        System.out.println("Withdrawal successful. New balance: Rs. " + balance);
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Enter account type (Savings/Current): ");
+        String accountType = scanner.nextLine();
+
+        System.out.println("Enter initial balance: ");
+        double balance = scanner.nextDouble();
+
+        BankAccount account;
+        if (accountType.equalsIgnoreCase("Savings")) {
+            account = new SavingsAccount(balance);
+        } else if (accountType.equalsIgnoreCase("Current")) {
+            account = new CurrentAccount(balance);
+        } else {
+            System.out.println("Invalid account type.");
+            return;
+        }
+
+        System.out.println("Enter transaction type (Deposit/Withdraw): ");
+        scanner.nextLine(); 
+        String transactionType = scanner.nextLine();
+
+        System.out.println("Enter transaction amount: ");
+        double amount = scanner.nextDouble();
+
+        System.out.println("Enter number of transactions this month: ");
+        int transactionsThisMonth = scanner.nextInt();
+
+        if (transactionType.equalsIgnoreCase("Deposit")) {
+            account.deposit(amount, transactionsThisMonth);
+        } else if (transactionType.equalsIgnoreCase("Withdraw")) {
+            account.withdraw(amount, transactionsThisMonth);
+        } else {
+            System.out.println("Invalid transaction type.");
+        }
+        scanner.close();
+    }
+}
+
+
+OUTPUT:
+-------------
+Enter account type (Savings/Current): 
+SAVINGS
+Enter initial balance: 
+20000
+Enter transaction type (Deposit/Withdraw): 
+withdraw
+Enter transaction amount: 
+2000
+Enter number of transactions this month: 
+1
+Withdrawal successful. New balance: Rs. 18000.0
