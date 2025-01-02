@@ -1,0 +1,38 @@
+import java.util.*;
+abstract class arithoprtions
+{
+        public int add(int a,int b)
+        {
+            return a+b;    
+        }
+        abstract int prod(int a,int b);
+}
+abstract class myclass extends arithoprtions
+{
+        public int prod(int a,int b)
+        {
+                return a*b;
+        }
+        abstract float div(int a,int b);
+}
+class superclass extends myclass
+{
+        public float div(int a,int b)
+        {
+                return a/b;
+        }
+}
+public class Main{
+        public static void main(String[] args){
+                superclass obj=new superclass();
+                System.out.println("add:"+obj.add(5,5));
+                System.out.println("mul:"+obj.prod(10,10));
+                System.out.println("division:"+obj.div(10,2));
+        }
+}
+
+SOLUTION:
+---------
+add: 10
+mul: 100
+division: 5.0
