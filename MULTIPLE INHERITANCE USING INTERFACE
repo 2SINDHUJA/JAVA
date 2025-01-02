@@ -1,0 +1,31 @@
+Write the java program to implement multiple inheritance to add and sub of two numbers using interface.
+
+SOLUTION:
+---------
+import java.util.Scanner;
+interface Addition {
+    int add(int a, int b);
+}
+interface Subtraction {
+    int sub(int a, int b);
+}
+class Calculator implements Addition, Subtraction {
+    public int add(int a, int b) {
+        return a + b;
+    }
+    public int sub(int a, int b) {
+        return a - b;
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first number: ");
+        int num1 = scanner.nextInt();
+        System.out.print("Enter second number: ");
+        int num2 = scanner.nextInt();
+        Calculator calc = new Calculator();
+        System.out.println("Addition: " + calc.add(num1, num2););
+        System.out.println("Subtraction: " + calc.sub(num1, num2););
+    }
+}
