@@ -1,0 +1,66 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        Vector<String> al = new Vector<String>();
+        al.add("India");
+        al.add("China");
+        al.add("Japan");
+        al.add("Indonesia");
+        al.add("Egypt");
+        boolean found = false; 
+        for (int i = 0; i < 2; i++) {
+            System.out.print("Enter country name to search: ");
+            String name = sc.nextLine();
+            if (al.contains(name)) {
+                System.out.println(name + " is present in the list.");
+                found = true;
+                break; 
+            } else {
+                System.out.println(name + " is not present in the list.");
+                if (i == 0) {
+                    System.out.println("Try again!");
+                }
+            }
+        }
+        if (!found) {
+            System.out.println("Country not found after 2 attempts.");
+        }
+    }
+}
+
+SOLUTION:
+---------
+Enter country name to search: Indonesia
+Indonesia is present in the list.
+
+METHOD 2:
+----------
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args)
+	{
+		Scanner SC = new Scanner(System.in);
+		Vector<String> al = new Vector<>();
+		al.add("India");
+		al.add("Japan");
+		al.add("China");
+		al.add("Korea");
+		al.add("Germany");
+		char ch = 'y';
+		while(ch == 'y'|| ch == 'Y')
+		{
+			System.out.print("Enter a country name to search: ");
+			String str = SC.next();
+			boolean b = al.contains(str);
+			if(b)
+				System.out.println("The country is available");
+			else
+				System.out.println("The country is not available");
+			System.out.print("Do you want another search (y/n): ");
+			ch = SC.next().charAt(0);
+		}
+		System.out.println("Thank you...! Visit Again.....!");
+	}
+}
