@@ -1,0 +1,54 @@
+import java.util.ArrayList;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		ArrayList<Integer> arr=new 	ArrayList<Integer>();
+		arr.add(10);
+		arr.add(20);
+		arr.add(30);
+		arr.add(40);
+		arr.add(50);
+		System.out.println(arr);
+		
+		arr.add(2,25);
+		System.out.println(arr);//add method
+		
+		System.out.println("Size:"+arr.size());//find the size 
+		
+		boolean b =arr.isEmpty();
+		System.out.println(b);//check it is empty or not
+		
+		System.out.println(arr.get(1));//get method
+		
+		System.out.println(arr.indexOf(30));//indexOf method
+		
+		System.out.println(arr.contains(50));//Contains method
+		
+		System.out.println(arr.set(3,35));//set method
+		
+		arr.remove(2);
+		System.out.println(arr);//remove method
+		
+		arr.clear();
+		System.out.println(arr);//clear method
+		
+		boolean a =arr.isEmpty();
+		System.out.println(a);
+		
+	}
+}
+
+SOLUTION:
+---------
+[10, 20, 30, 40, 50]
+[10, 20, 25, 30, 40, 50]
+Size:6
+false
+20
+3
+true
+30
+[10, 20, 35, 40, 50]
+[]
+true
