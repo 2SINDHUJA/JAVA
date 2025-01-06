@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		ArrayList<String> al=new ArrayList<String>();
+		al.add("Dog");
+		al.add("Cat");
+		al.add("Horse");
+		al.add("Camel");
+		al.add("Donkey");
+		ListIterator k=al.listIterator();
+		System.out.println("Original List:"+al);
+		Collections.sort(al);
+		System.out.println("Sorted Order:"+al);
+		Collections.shuffle(al);
+		System.out.println("Shuffeled Order:"+al);
+		Collections.reverse(al);
+		System.out.println("Reversed Order:"+al);
+	}
+}
