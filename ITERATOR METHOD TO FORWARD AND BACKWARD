@@ -1,0 +1,22 @@
+import java.util.*;
+public class Main {
+	public static void main(String[] args) {
+		ArrayList<Integer> al=new ArrayList<Integer>();
+		al.add(10);
+		al.add(20);
+		al.add(30);
+		al.add(40);
+		al.add(50);
+		ListIterator k=al.listIterator();
+		while(k.hasNext())
+		{
+		    System.out.print(k.next()+" ");
+		}
+		System.out.println();
+		while(k.hasPrevious())
+		{
+		    System.out.print(k.previous()+" ");
+		}
+		
+	}
+}
