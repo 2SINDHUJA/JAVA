@@ -1,0 +1,121 @@
+import java.util.*;
+class Book {
+    String bookID, title, author;
+    double price;
+    public Book(String bookID, String title, String author, double price) {
+        this.bookID = bookID;
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+    public void display() {
+        System.out.println("Book ID: " + bookID + ", Title: " + title + ", Author: " + author + ", Price: $" + price);
+    }
+}
+
+public class Main {
+    static ArrayList<Book> books = new ArrayList<>(); 
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int choice;
+        do {
+            System.out.println("\nLibrary Book Management System");
+            System.out.println("1. Add a Book");
+            System.out.println("2. View All Books");
+            System.out.println("3. Search for a Book");
+            System.out.println("4. Update Book Details");
+            System.out.println("5. Remove a Book");
+            System.out.println("6. Exit");
+            System.out.print("Enter your choice: ");
+            choice = sc.nextInt();
+            sc.nextLine(); 
+            switch (choice) {
+                case 1:
+                    addBook(sc);
+                    break;
+                case 2:
+                    viewBooks();
+                    break;
+                case 3:
+                    searchBook(sc);
+                    break;
+                case 4:
+                    updateBook(sc);
+                    break;
+                case 5:
+                    removeBook(sc);
+                    break;
+                case 6:
+                    System.out.println("Exiting... Thank you!");
+                    break;
+                default:
+                    System.out.println("Invalid choice. Try again.");
+            }
+        } while (choice != 6);
+
+        sc.close();
+    }
+    static void addBook(Scanner sc) {
+        System.out.print("Enter Book ID: ");
+        String id = sc.nextLine();
+        System.out.print("Enter Title: ");
+        String title = sc.nextLine();
+        System.out.print("Enter Author: ");
+        String author = sc.nextLine();
+        System.out.print("Enter Price: ");
+        double price = sc.nextDouble();
+        books.add(new Book(id, title, author, price));
+        System.out.println("Book added successfully!");
+    }
+    static void viewBooks() {
+        if (books.isEmpty()) {
+            System.out.println("No books available.");
+        } else {
+            for (Book book : books) {
+                book.display();
+            }
+        }
+    }
+    static void searchBook(Scanner sc) {
+        System.out.print("Enter Book ID or Title: ");
+        String search = sc.nextLine();
+        for (Book book : books) {
+            if (book.bookID.equalsIgnoreCase(search) || book.title.equalsIgnoreCase(search)) {
+                book.display();
+                return;
+            }
+        }
+        System.out.println("Book not found.");
+    }
+    static void updateBook(Scanner sc) {
+        System.out.print("Enter Book ID to update: ");
+        String id = sc.nextLine();
+        for (Book book : books) {
+            if (book.bookID.equalsIgnoreCase(id)) {
+                System.out.print("Enter new Title: ");
+                book.title = sc.nextLine();
+                System.out.print("Enter new Author: ");
+                book.author = sc.nextLine();
+                System.out.print("Enter new Price: ");
+                book.price = sc.nextDouble();
+                System.out.println("Book updated successfully!");
+                return;
+            }
+        }
+        System.out.println("Book not found.");
+    }
+    static void removeBook(Scanner sc) {
+        System.out.print("Enter Book ID to remove: ");
+        String id = sc.nextLine();
+        for (Book book : books) {
+            if (book.bookID.equalsIgnoreCase(id)) {
+                books.remove(book);
+                System.out.println("Book removed successfully!");
+                return;
+            }
+        }
+        System.out.println("Book not found.");
+    }
+}
+
+       
