@@ -1,0 +1,86 @@
+import java.util.*;
+class Main {
+    public static void main(String[] args) {
+    
+        Set<String> cricket = new HashSet<String>();
+        Set<String> chess = new HashSet<String>();
+        Set<String> volleyball = new HashSet<String>();
+
+        cricket.add("Sam");
+        cricket.add("sneha");
+        cricket.add("shivani");
+        cricket.add("vikram");
+        cricket.add("vishal");
+        System.out.println("All cricket players: " + cricket);
+        
+        chess.add("Samyukthan");
+        chess.add("sneholic");
+        chess.add("shivani");
+        chess.add("karna");
+        chess.add("kishore");
+        System.out.println("All chess players: " + chess);
+        
+        volleyball.add("kishore");
+        volleyball.add("vikram");
+        volleyball.add("divinesh");
+        volleyball.add("sneholic");
+        volleyball.add("karna");
+        System.out.println("All volleyball players: " + volleyball);
+
+        // Find all unique players
+        Set<String> allPlayers = new HashSet<>();
+        allPlayers.addAll(cricket);
+        allPlayers.addAll(chess);
+        allPlayers.addAll(volleyball);
+        System.out.println("All unique players: " + allPlayers);
+
+        // Players who play only one game (using temporary sets)
+        Set<String> onlyCricket = new HashSet<>(cricket);
+        onlyCricket.removeAll(chess);
+        onlyCricket.removeAll(volleyball);
+        System.out.println("Students who are interested to play only cricket: " + onlyCricket);
+
+        Set<String> onlyChess = new HashSet<>(chess);
+        onlyChess.removeAll(cricket);
+        onlyChess.removeAll(volleyball);
+        System.out.println("Students who are interested to play only chess: " + onlyChess);
+
+        Set<String> onlyVolleyball = new HashSet<>(volleyball);
+        onlyVolleyball.removeAll(cricket);
+        onlyVolleyball.removeAll(chess);
+        System.out.println("Students who are interested to play only volleyball: " + onlyVolleyball);
+
+        // Players who play multiple games
+        Set<String> cricketAndChess = new HashSet<>(cricket);
+        cricketAndChess.retainAll(chess);
+        System.out.println("Students who are interested to play both cricket and chess: " + cricketAndChess);
+
+        Set<String> cricketAndVolleyball = new HashSet<>(cricket);
+        cricketAndVolleyball.retainAll(volleyball);
+        System.out.println("Students who are interested to play both cricket and volleyball: " + cricketAndVolleyball);
+
+        Set<String> chessAndVolleyball = new HashSet<>(chess);
+        chessAndVolleyball.retainAll(volleyball);
+        System.out.println("Students who are interested to play both chess and volleyball: " + chessAndVolleyball);
+        
+         Set<String> allGames = new HashSet<>(cricket);
+        allGames.retainAll(chess);
+        allGames.retainAll(volleyball);
+        System.out.println("Students who are interested to play all games: " + allGames);
+    
+    }
+}
+
+SOLUTION:
+---------
+All cricket players: [vikram, shivani, vishal, sneha, Sam]
+All chess players: [Samyukthan, kishore, shivani, sneholic, karna]
+All volleyball players: [kishore, vikram, divinesh, sneholic, karna]
+All unique players: [Samyukthan, kishore, vikram, shivani, vishal, sneha, Sam, sneholic, karna, divinesh]
+Students who are interested to play only cricket: [vishal, sneha, Sam]
+Students who are interested to play only chess: [Samyukthan]
+Students who are interested to play only volleyball: [divinesh]
+Students who are interested to play both cricket and chess: [shivani]
+Students who are interested to play both cricket and volleyball: [vikram]
+Students who are interested to play both chess and volleyball: [kishore, sneholic, karna]
+Students who are interested to play all games: []
