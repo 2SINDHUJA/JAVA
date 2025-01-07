@@ -1,0 +1,43 @@
+import java.util.*;
+public class Main {
+    public static void main(String[] args) {
+      
+        Set<String> technology = new HashSet<>();
+        technology.add("Alice");
+        technology.add("Bob");
+        technology.add("Charlie");
+        technology.add("David");
+
+        Set<String> health = new HashSet<>();
+        health.add("Charlie");
+        health.add("David");
+        health.add("Emma");
+        health.add("Frank");
+
+        Set<String> business = new HashSet<>();
+        business.add("Alice");
+        business.add("Frank");
+        business.add("George");
+        business.add("Helen");
+
+        Set<String> allSubscribers = new HashSet<>(technology);
+        allSubscribers.addAll(health);
+        allSubscribers.addAll(business);
+        System.out.println("Union (All unique subscribers): " + allSubscribers);
+
+        Set<String> techAndHealth = new HashSet<>(technology);
+        techAndHealth.retainAll(health);
+        System.out.println("Intersection (Technology and Health): " + techAndHealth);
+
+        Set<String> techNotHealth = new HashSet<>(technology);
+        techNotHealth.removeAll(health);
+        System.out.println("Difference (Technology not in Health): " + techNotHealth);
+
+        Set<String> healthOrBusiness = new HashSet<>(health);
+        healthOrBusiness.addAll(business);
+        Set<String> healthAndBusiness = new HashSet<>(health);
+        healthAndBusiness.retainAll(business);
+        healthOrBusiness.removeAll(healthAndBusiness);
+        System.out.println("Symmetric Difference (Health or Business but not both): " + healthOrBusiness);
+    }
+}
