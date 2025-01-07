@@ -1,0 +1,28 @@
+import java.util.LinkedHashSet;
+import java.util.Iterator;
+
+public class Main {
+    public static void main(String[] args) {
+        
+        LinkedHashSet<Integer> num = new LinkedHashSet<>();
+        num.add(12);
+        num.add(21);
+        num.add(43);
+        num.add(83);
+        num.add(99);
+
+        LinkedHashSet<Integer> toRemove=new LinkedHashSet<>();
+        
+        for(int n:num){
+            if(n%3==0){
+                toRemove.add(n);
+            }
+            else{
+                continue;
+            }
+            
+        }
+        num.removeAll(toRemove);
+        System.out.println(num);
+    }
+}
