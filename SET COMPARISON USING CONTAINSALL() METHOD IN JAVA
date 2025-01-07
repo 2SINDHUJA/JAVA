@@ -1,0 +1,18 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        // Creating sets
+        Set<Integer> s1 = new HashSet<>(Arrays.asList(10, 20, 30));
+        Set<Integer> s2 = new HashSet<>(Arrays.asList(10, 20, 30));
+        Set<Integer> s3 = new HashSet<>(Arrays.asList(10, 30, 40, 50));
+
+        // Using containsAll method
+        boolean isS1EqualS2 = s1.containsAll(s2);
+        boolean isS1EqualS3 = s1.containsAll(s3);
+
+        // Output results
+        System.out.println("s1 contains all elements of s2: " + isS1EqualS2); // Expected: true
+        System.out.println("s1 contains all elements of s3: " + isS1EqualS3); // Expected: false
+    }
+}
