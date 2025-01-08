@@ -1,0 +1,13 @@
+import java.util.HashMap;
+class Main {
+    public static void main(String[] args) {
+
+        HashMap<Integer, String> hm = new HashMap<>(10, 0.5f);
+        hm.put(1, "karur");
+        hm.put(2, "Trichy");
+        hm.put(3, "Dindigul");
+        HashMap hmo=(HashMap)hm.clone();
+        System.out.println(hmo);
+    }
+}
+    
