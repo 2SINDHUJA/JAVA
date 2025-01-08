@@ -1,0 +1,43 @@
+import java.util.HashMap;
+import java.util.TreeMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
+class Main {
+    public static void main(String[] args) {
+
+        HashMap<Integer, String> hm = new HashMap<>(10, 0.5f);
+        hm.put(1, "karur");
+        hm.put(2, "Trichy");
+        hm.put(3, "Dindigul");
+        hm.put(4, "Madurai");
+        hm.put(5, "Namakkal");
+        hm.put(6, "Thanjavur");
+        hm.put(7, "Chennai");
+        hm.put(8, "Theni");
+        hm.put(9, "Cuddalore");
+        hm.put(10, "Coimbatore");
+
+        System.out.println(hm.values());
+        System.out.println(hm.keySet());
+        System.out.println();
+        
+        TreeMap<Integer, String> tm = new TreeMap<>(hm);
+        System.out.println(tm.values());
+        System.out.println(tm.keySet());
+        System.out.println();
+
+        LinkedHashMap<Integer, String> lhm =new LinkedHashMap<>(hm);
+        System.out.println(lhm.values());
+        System.out.println(lhm.keySet());
+    }
+}
+SOLUTION:
+----------
+[karur, Trichy, Dindigul, Madurai, Namakkal, Thanjavur, Chennai, Theni, Cuddalore, Coimbatore]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+[karur, Trichy, Dindigul, Madurai, Namakkal, Thanjavur, Chennai, Theni, Cuddalore, Coimbatore]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+[karur, Trichy, Dindigul, Madurai, Namakkal, Thanjavur, Chennai, Theni, Cuddalore, Coimbatore]
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
