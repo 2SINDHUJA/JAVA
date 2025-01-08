@@ -1,0 +1,46 @@
+import java.util.TreeMap;
+public class Main {
+	public static void main(String [] args) {
+		TreeMap<Integer, Integer > tm = new TreeMap<>();
+		tm.put(112, 76);
+		tm.put(126, 82);
+		tm.put(101, 45);
+		tm.put(117, 63);
+		tm.put(106, 64);
+		System.out.println("Original Map");
+		System.out.println(tm);
+		System.out.println("Before");
+		System.out.println("SNo" + " --> "  +" Marks");
+		tm.forEach( (k, v) -> { System.out.println(k + " --> " + v); } );
+
+		tm.forEach( (k, v) -> { if(k%2==0)
+		                        tm.replace(k, v-5);
+		                        else
+			                        tm.replace(k, v+5);
+			                      } );
+
+		System.out.println("After");
+		System.out.println("SNo" + " --> "  +" Marks");
+		tm.forEach( (k, v) -> { System.out.println(k + " --> " + v); } );
+
+
+	}
+}
+SOLUTION:
+---------
+Original Map
+{101=45, 106=64, 112=76, 117=63, 126=82}
+Before
+SNo -->  Marks
+101 --> 45
+106 --> 64
+112 --> 76
+117 --> 63
+126 --> 82
+After
+SNo -->  Marks
+101 --> 50
+106 --> 59
+112 --> 71
+117 --> 68
+126 --> 77
