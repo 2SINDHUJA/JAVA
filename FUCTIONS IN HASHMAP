@@ -1,0 +1,151 @@
+import java.util.HashMap;
+class Main {
+    public static void main(String[] args) {
+        HashMap<Integer,String> hm=new HashMap<>();
+        hm.put(1,"Apple");
+        hm.put(2,"Orange");
+        hm.put(3,"Guava");
+        hm.put(4,"Grapes");
+        hm.put(5,"Banana");
+        System.out.println(hm);
+       
+    }
+}
+SOLUTION:
+---------
+{1=Apple, 2=Orange, 3=Guava, 4=Grapes, 5=Banana}
+-----------------------------------------------------------------------//put(key,values) method
+import java.util.HashMap;
+class Main {
+    public static void main(String[] args) {
+        HashMap<Integer,String> hm=new HashMap<>(10,0.5f);
+        hm.put(1,"Apple");
+        hm.put(2,"Orange");
+        hm.put(3,"Guava");
+        hm.put(4,"Grapes");
+        hm.put(5,"Banana");
+        hm.put(3,"Plums");
+        System.out.println(hm);
+       
+    }
+}
+SOLUTION:
+---------
+{1=Apple, 2=Orange, 3=Plums, 4=Grapes, 5=Banana}
+------------------------------------------------------------------------//remove(key) method
+import java.util.HashMap;
+class Main {
+    public static void main(String[] args) {
+        HashMap<Integer,String> hm=new HashMap<>(10,0.5f);
+        hm.put(1,"Apple");
+        hm.put(2,"Orange");
+        hm.put(3,"Guava");
+        hm.put(4,"Grapes");
+        hm.put(5,"Banana");
+        hm.put(3,"Plums");
+        System.out.println(hm); 
+        String removedValue = hm.remove(3); 
+        if (removedValue != null) 
+        {
+            System.out.println("Removed successfully: " + removedValue);
+        } 
+        else 
+        {
+            System.out.println("Key does not exist, cannot remove.");
+        }
+        System.out.println(hm); 
+    }
+}
+SOLUTION:
+---------
+{1=Apple, 2=Orange, 3=Plums, 4=Grapes, 5=Banana}
+Removed successfully: Plums
+{1=Apple, 2=Orange, 4=Grapes, 5=Banana}
+----------------------------------------------------------------------------//replace()method
+import java.util.HashMap;
+class Main {
+    public static void main(String[] args) {
+        HashMap<Integer,String> hm=new HashMap<>(10,0.5f);
+        hm.put(1,"Apple");
+        hm.put(2,"Orange");
+        hm.put(3,"Guava");
+        hm.put(4,"Grapes");
+        hm.put(5,"Banana");
+        hm.put(3,"Plums");
+        System.out.println(hm); 
+        hm.replace(3,"Guava");
+        System.out.println(hm); 
+    }
+}
+SOLUTION:
+---------
+{1=Apple, 2=Orange, 3=Plums, 4=Grapes, 5=Banana}
+{1=Apple, 2=Orange, 3=Guava, 4=Grapes, 5=Banana}
+-----------------------------------------------------------------------------//get() method
+import java.util.HashMap;
+class Main {
+    public static void main(String[] args) {
+        HashMap<Integer,String> hm=new HashMap<>(10,0.5f);
+        hm.put(1,"Apple");
+        hm.put(2,"Orange");
+        hm.put(3,"Guava");
+        hm.put(4,"Grapes");
+        hm.put(5,"Banana");
+        hm.put(3,"Plums");
+        System.out.println(hm); 
+        String b=hm.get(3);
+        System.out.println(b); 
+    }
+}
+SOLUTION:
+---------
+{1=Apple, 2=Orange, 3=Plums, 4=Grapes, 5=Banana}
+Plums
+------------------------------------------------------------------------------//keyset()method and values()method
+import java.util.HashMap;
+class Main {
+    public static void main(String[] args) {
+        HashMap<Integer,String> hm=new HashMap<>(10,0.5f);
+        hm.put(1,"Apple");
+        hm.put(2,"Orange");
+        hm.put(3,"Guava");
+        hm.put(4,"Grapes");
+        hm.put(5,"Banana");
+        hm.put(3,"Plums");
+        System.out.println(hm); 
+        System.out.println("All values: " + hm.values());
+
+        System.out.println("All keys: " + hm.keySet());
+    }
+}
+SOLUTION:
+---------
+{1=Apple, 2=Orange, 3=Plums, 4=Grapes, 5=Banana}
+All values: [Apple, Orange, Plums, Grapes, Banana]
+All keys: [1, 2, 3, 4, 5]
+---------------------------------------------------------------------------------
+import java.util.HashMap;
+class Main {
+    public static void main(String[] args) {
+        HashMap<Integer,String> hm=new HashMap<>(10,0.5f);
+        hm.put(1,"karur");
+        hm.put(2,"Trichy");
+        hm.put(3,"Dindugal");
+        hm.put(4,"Maurai");
+        hm.put(5,"Namakkal");
+        hm.put(6,"Thanjavur");
+        hm.put(7,"chennai");
+        hm.put(8,"Theni");
+        hm.put(9,"Kadallore");
+        hm.put(10,"Coimbatore");
+        System.out.println(hm); 
+        System.out.println("All values: " + hm.values());
+
+        System.out.println("All keys: " + hm.keySet());
+    }
+}
+SOLUTION:
+---------
+{1=karur, 2=Trichy, 3=Dindugal, 4=Maurai, 5=Namakkal, 6=Thanjavur, 7=chennai, 8=Theni, 9=Kadallore, 10=Coimbatore}
+All values: [karur, Trichy, Dindugal, Maurai, Namakkal, Thanjavur, chennai, Theni, Kadallore, Coimbatore]
+All keys: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
